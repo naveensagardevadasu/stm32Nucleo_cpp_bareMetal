@@ -1,0 +1,6 @@
+../Inc/gpio_ref.h:25:6:void pinMode(GPIO_TYPEDEF*, uint8_t, uint8_t)	13
+../Inc/gpio_ref.h:57:6:void digitalWrite(GPIO_TYPEDEF*, uint8_t, bool)	1
+../Inc/gpio_ref.h:62:6:bool digitalRead(GPIO_TYPEDEF*, uint8_t)	1
+../Inc/delay.h:12:6:void Tim6_init()	1
+../Inc/delay.h:17:6:void delay(uint32_t)	2
+../Src/main.cpp:9:5:int main()	1

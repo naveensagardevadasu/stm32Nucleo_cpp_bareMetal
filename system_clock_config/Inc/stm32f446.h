@@ -1,0 +1,85 @@
+
+
+#ifndef STM32F446_H_
+#define STM32F446_H_
+
+
+#define __IO volatile
+
+#define PERIPHERAL_BASE_ADDRESS 0x40000000U
+
+#define APB1_OFFSET_ADDRESS 0x00U
+#define APB1_BASE_ADDRESS (PERIPHERAL_BASE_ADDRESS + APB1_OFFSET_ADDRESS)
+
+#define APB2_OFFSET_ADDRESS 0x10000U
+#define APB2_BASE_ADDRESS (PERIPHERAL_BASE_ADDRESS + APB2_OFFSET_ADDRESS)
+
+#define AHB1_OFFSET_ADDRESS 0X20000U
+#define AHB1_BASE_ADDRESS (PERIPHERAL_BASE_ADDRESS + AHB1_OFFSET_ADDRESS)
+
+#define RCC_OFFSET_ADDRESS 0x3800U
+#define RCC_BASE (AHB1_BASE_ADDRESS + RCC_OFFSET_ADDRESS)
+
+
+typedef struct
+{
+	__IO uint32_t CR;
+	__IO uint32_t PLLCFGR;
+	__IO uint32_t CFGR;
+	__IO uint32_t CIR;
+	__IO uint32_t AHB1RSTR;
+	__IO uint32_t AHB2RSTR;
+	__IO uint32_t AHB3RSTR;
+	uint32_t RESERVED0;
+	__IO uint32_t APB1RSTR;
+	__IO uint32_t APB2RSTR;
+	uint32_t RESERVED1[2];
+	__IO uint32_t AHB1ENR;
+	__IO uint32_t AHB2ENR;
+	__IO uint32_t AHB3ENR;
+	uint32_t RESERVED2;
+	__IO uint32_t APB1ENR;
+	__IO uint32_t APB2ENR;
+	uint32_t RESERVED3[2];
+	__IO uint32_t AHB1LPENR;
+	__IO uint32_t AHB2LPENR;
+	__IO uint32_t AHB3LPENR;
+	uint32_t RESERVED4;
+	__IO uint32_t APB1LPENR;
+	__IO uint32_t APB2LPENR;
+	uint32_t RESERVED5[2];
+	__IO uint32_t BDCR;
+	__IO uint32_t CSR;
+	uint32_t RESERVED6[2];
+	__IO uint32_t SSCGR;
+	__IO uint32_t PLLI2SCFGR;
+	__IO uint32_t PLLSAICFGR;
+	__IO uint32_t DCKCFGR;
+	__IO uint32_t CKGATENR;
+	__IO uint32_t DCKCFGR2;
+}RCC_TYPEDEF;
+
+
+typedef struct
+{
+	__IO uint32_t MODER;
+	__IO uint32_t OTYPER;
+	__IO uint32_t OSPEEDR;
+	__IO uint32_t PUPDR;
+	__IO uint32_t IDR;
+	__IO uint32_t ODR;
+	__IO uint32_t BSRR;
+	__IO uint32_t LCKR;
+	__IO uint32_t AFR[2];
+}GPIO_TYPEDEF;
+
+
+#define RCC ((RCC_TYPEDEF*)RCC_BASE)
+
+
+#define GPIOA_OFFSET_ADDRESS 0x00U
+#define GPIOA_BASE_ADDRESS (AHB1_BASE_ADDRESS + GPIOA_OFFSET_ADDRESS)
+
+#define GPIOA ((GPIO_TYPEDEF*)GPIOA_BASE_ADDRESS)
+
+#endif /* STM32F446_H_ */

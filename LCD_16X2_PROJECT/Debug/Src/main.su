@@ -1,0 +1,9 @@
+../Inc/gpio_ref.h:27:6:void pinMode(GPIO_TYPEDEF*, uint8_t, uint8_t)	16	static
+../Inc/gpio_ref.h:59:6:void digitalWrite(GPIO_TYPEDEF*, uint8_t, bool)	16	static
+../Inc/gpio_ref.h:64:6:bool digitalRead(GPIO_TYPEDEF*, uint8_t)	16	static
+../Inc/LiquidCrystalDisplay.h:15:6:void delay(uint32_t)	24	static
+../Inc/LiquidCrystalDisplay.h:45:1:LiquidCrystalDisplay::LiquidCrystalDisplay(GPIO_TYPEDEF*, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t)	24	static
+../Inc/LiquidCrystalDisplay.h:71:6:void LiquidCrystalDisplay::begin()	16	static
+../Inc/LiquidCrystalDisplay.h:76:6:void LiquidCrystalDisplay::LCD_Command(uint8_t)	16	static
+../Inc/LiquidCrystalDisplay.h:94:6:void LiquidCrystalDisplay::LCD_Data(uint8_t)	16	static
+../Src/main.cpp:6:5:int main()	4	static

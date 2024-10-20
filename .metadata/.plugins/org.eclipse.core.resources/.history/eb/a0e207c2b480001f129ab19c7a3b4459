@@ -1,0 +1,40 @@
+/*
+ * LiquidCrystalDisplay.h
+ *
+ *  Created on: Oct 2, 2024
+ *      Author: root
+ */
+
+#ifndef LIQUIDCRYSTALDISPLAY_H_
+#define LIQUIDCRYSTALDISPLAY_H_
+
+
+#include "gpio_ref.h"
+
+class LiquidCrystalDisplay
+{
+public:
+	LiquidCrystalDisplay(GPIO_TYPEDEF* gpio_port,uint8_t RS,uint8_t EN,uint8_t D0,uint8_t D1,uint8_t D2, uint8_t D3,uint8_t D4,uint8_t D5,uint8_t D6,uint8_t D7);
+	void LCD_Command(uint8_t command);
+	void LCD_Data(uint8_t Data);
+private:
+	GPIO_TYPEDEF* __gpio_port__;
+	uint8_t __EN__;
+	uint8_t __RS__;
+	uint8_t __D0__;
+	uint8_t __D1__;
+	uint8_t __D2__;
+	uint8_t __D3__;
+	uint8_t __D4__;
+	uint8_t __D5__;
+	uint8_t __D6__;
+	uint8_t __D7__;
+};
+
+
+LiquidCrystalDisplay::LiquidCrystalDisplay(GPIO_TYPEDEF* gpio_port,uint8_t RS,uint8_t EN,uint8_t D0,uint8_t D1,uint8_t D2, uint8_t D3,uint8_t D4,uint8_t D5,uint8_t D6,uint8_t D7)
+{
+
+}
+
+#endif /* LIQUIDCRYSTALDISPLAY_H_ */

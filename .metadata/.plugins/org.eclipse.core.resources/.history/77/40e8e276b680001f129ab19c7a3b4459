@@ -1,0 +1,62 @@
+/*
+ * LiquidCrystalDisplay.h
+ *
+ *  Created on: Oct 2, 2024
+ *      Author: root
+ */
+
+#ifndef LIQUIDCRYSTALDISPLAY_H_
+#define LIQUIDCRYSTALDISPLAY_H_
+
+
+#include "gpio_ref.h"
+
+class LiquidCrystalDisplay
+{
+public:
+	LiquidCrystalDisplay(GPIO_TYPEDEF* gpio_port,uint8_t RS,uint8_t EN,uint8_t D0,uint8_t D1,uint8_t D2, uint8_t D3,uint8_t D4,uint8_t D5,uint8_t D6,uint8_t D7);
+	void LCD_Command(uint8_t command);
+	void LCD_Data(uint8_t Data);
+	void begin();
+private:
+	GPIO_TYPEDEF* __gpio_port__;
+	uint8_t __EN__;
+	uint8_t __RS__;
+	uint8_t __D0__;
+	uint8_t __D1__;
+	uint8_t __D2__;
+	uint8_t __D3__;
+	uint8_t __D4__;
+	uint8_t __D5__;
+	uint8_t __D6__;
+	uint8_t __D7__;
+};
+
+
+LiquidCrystalDisplay::LiquidCrystalDisplay(GPIO_TYPEDEF* gpio_port,uint8_t RS,uint8_t EN,uint8_t D0,uint8_t D1,uint8_t D2, uint8_t D3,uint8_t D4,uint8_t D5,uint8_t D6,uint8_t D7):
+		__gpio_port__(gpio_port),
+		__RS__(RS),
+		__EN__(EN),
+		__D0__(D0),
+		__D1__(D1),
+		__D2__(D2),
+		__D3__(D3),
+		__D4__(D4),
+		__D5__(D5),
+		__D6__(D6),
+		__D7__(D7)
+{
+
+}
+
+
+void LiquidCrystalDisplay::begin()
+{
+	pinMode(gpio_port,RS,OUTPUT);
+	pinMode(gpio_port,EN,OUTPUT);
+	pinMode(gpio_port,D0,OUTPUT);
+	pinMode(gpio_port,D1,OUTPUT);
+	pinMode(gpio_port,D2,OUTPUT);
+	pinMode(gpio_port,D3,OUTPUT);
+}
+#endif /* LIQUIDCRYSTALDISPLAY_H_ */

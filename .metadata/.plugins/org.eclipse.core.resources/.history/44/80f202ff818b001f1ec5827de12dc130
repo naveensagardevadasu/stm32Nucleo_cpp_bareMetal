@@ -1,0 +1,26 @@
+
+
+#include <stdint.h>
+#include "gpio_ref.h"
+#include "delay.h"
+#include "serial.h"
+
+//Serial serial(USART2);
+
+
+int main(void)
+{
+	serial.begin(BAUD_9600);
+	pinMode(GPIOA,P5,OUTPUT);
+	Tim6_init();
+
+    while(1)
+    {
+    	digitalWrite(GPIOA,P5,1);
+    	serial.sendChar('A');
+    	serial.sendChar('\n');
+    	delay(500);
+    	digitalWrite(GPIOA,P5,0);
+    	delay(500);
+    }
+}

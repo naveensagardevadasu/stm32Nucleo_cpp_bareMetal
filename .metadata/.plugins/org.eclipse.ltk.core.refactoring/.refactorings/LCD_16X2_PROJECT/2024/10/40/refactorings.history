@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;LCD_16X2_PROJECT/Src/main.c&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/main.c" name="main.cpp" stamp="1727866924513" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;LCD_16X2_PROJECT/Inc/LiquidCrystalDisplay&apos; to &apos;LiquidCrystalDisplay.h&apos;" description="Rename resource &apos;LiquidCrystalDisplay&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/LiquidCrystalDisplay" name="LiquidCrystalDisplay.h" stamp="1727867019764" updateReferences="true"/>
+</session>

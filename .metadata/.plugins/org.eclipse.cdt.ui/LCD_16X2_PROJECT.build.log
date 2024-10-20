@@ -1,0 +1,17 @@
+08:52:02 **** Incremental Build of configuration Debug for project LCD_16X2_PROJECT ****
+make -j7 all 
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ -o "LCD_16X2_PROJECT.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/naveensagar/Desktop/STM32_WORKS/STM32_CPP_BARE_METAL/LCD_16X2_PROJECT/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_16X2_PROJECT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: LCD_16X2_PROJECT.elf
+ 
+arm-none-eabi-size  LCD_16X2_PROJECT.elf 
+arm-none-eabi-objdump -h -S LCD_16X2_PROJECT.elf  > "LCD_16X2_PROJECT.list"
+   text	   data	    bss	    dec	    hex	filename
+    712	      0	   1568	   2280	    8e8	LCD_16X2_PROJECT.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCD_16X2_PROJECT.list
+ 
+
+08:52:03 Build Finished. 0 errors, 0 warnings. (took 1s.351ms)
+

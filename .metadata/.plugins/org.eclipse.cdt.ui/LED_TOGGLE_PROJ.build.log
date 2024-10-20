@@ -1,0 +1,17 @@
+11:12:56 **** Build of configuration Debug for project LED_TOGGLE_PROJ ****
+make -j7 all 
+arm-none-eabi-g++ "../Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-g++ -o "LED_TOGGLE_PROJ.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/naveensagar/Desktop/STM32_WORKS/STM32_CPP_BARE_METAL/LED_TOGGLE_PROJ/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_TOGGLE_PROJ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: LED_TOGGLE_PROJ.elf
+ 
+arm-none-eabi-size  LED_TOGGLE_PROJ.elf 
+arm-none-eabi-objdump -h -S LED_TOGGLE_PROJ.elf  > "LED_TOGGLE_PROJ.list"
+   text	   data	    bss	    dec	    hex	filename
+   1360	      0	   1568	   2928	    b70	LED_TOGGLE_PROJ.elf
+Finished building: default.size.stdout
+ 
+Finished building: LED_TOGGLE_PROJ.list
+ 
+
+11:12:56 Build Finished. 0 errors, 0 warnings. (took 411ms)
+

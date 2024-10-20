@@ -1,0 +1,93 @@
+
+
+#ifndef SERIAL_H_
+#define SERIAL_H_
+
+#include "stm32f446.h"
+#include <string>
+
+#define BAUD_300
+#define BAUD_600
+#define BAUD_750
+#define BAUD_1200
+#define BAUD_2400
+#define BAUD_4800
+#define BAUD_9600
+#define BAUD_19200
+#define BAUD_31250
+#define BAUD_38400
+#define BAUD_57600
+#define BAUD_74880
+#define BAUD_115200
+#define BAUD_230400
+#define BAUD_250000
+#define BAUD_460800
+#define BAUD_500000
+#define BAUD_921600
+#define BAUD_1000000
+#define BAUD_2000000
+
+//#define BAUD_9600 0x683
+
+using namespace std;
+
+class Serial
+{
+public:
+	Serial(USART_TYPEDEF* usart);
+	void begin(uint32_t baud);
+	void print(string str);
+	void println(string str);
+	void sendChar(uint8_t data);
+private:
+	USART_TYPEDEF* __usart__;
+};
+
+Serial::Serial(USART_TYPEDEF* usart):
+		__usart__(usart)
+{
+	if(__usart__ == USART2)
+	{
+		RCC->APB1ENR |= (1 << 17);
+		RCC->AHB1ENR |= (1 << 0);
+
+		GPIOA->MODER |= (2 << 4);
+		GPIOA->MODER |= (2 << 6);
+		GPIOA->OSPEEDR |= (3 << 4) | (3 << 6);
+		GPIOA->AFR[0] |= (7 << 8);
+		GPIOA->AFR[0] |= (7 << 12);
+	}
+
+
+}
+
+void Serial::begin(uint32_t baud)
+{
+	__usart__->CR1 = 0x00;
+	__usart__->CR1 |= (1 << 13);
+	__usart__->CR1 &= ~(1 << 12);
+	__usart__->BRR = baud;
+	__usart__->CR1 |= (1 << 2);
+	__usart__->CR1 |= (1 << 3);
+}
+
+void Serial::sendChar(uint8_t data)
+{
+	__usart__->DR = data;
+	while (!(__usart__->SR & (1<<6)));
+	__usart__->SR &= ~(1 << 6);
+}
+
+void Serial::print(string str)
+{
+	for(char &c : str)sendChar(c);
+}
+
+void Serial::println(string str)
+{
+	for(char &c : str)sendChar(c);
+	sendChar('\n');
+}
+
+
+#endif /* SERIAL_H_ */

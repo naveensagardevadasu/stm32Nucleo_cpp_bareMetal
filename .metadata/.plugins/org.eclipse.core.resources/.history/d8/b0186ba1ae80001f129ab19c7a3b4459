@@ -1,0 +1,20 @@
+/*
+ * LiquidCrystalDisplay.h
+ *
+ *  Created on: Oct 2, 2024
+ *      Author: root
+ */
+
+#ifndef LIQUIDCRYSTALDISPLAY_H_
+#define LIQUIDCRYSTALDISPLAY_H_
+
+
+#include "gpio_ref.h"
+
+class LiquidCrystalDisplay
+{
+
+};
+
+
+#endif /* LIQUIDCRYSTALDISPLAY_H_ */

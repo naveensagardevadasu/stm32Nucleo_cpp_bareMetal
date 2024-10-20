@@ -1,0 +1,20 @@
+/*
+ * delay.h
+ *
+ *  Created on: Oct 15, 2024
+ *      Author: root
+ */
+
+#ifndef DELAY_H_
+#define DELAY_H_
+#include "stm32f446.h"
+
+void Tim_init()
+{
+	RCC->APB1ENR |=(0x01<<0);
+}
+
+
+
+
+#endif /* DELAY_H_ */
